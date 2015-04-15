@@ -7,15 +7,27 @@ font: 5em;
 color: #458B74;
 text-align: center;
 text-shadow: 0 1px 3px rgba(0,0,0,.4), 0 1px rgba(0,0,0,.2);
+
+}
+.outer{
+width: 100%;
+height: 100%;
+position: absolute;
+top: 0;
+left: 0;
+overflow: auto;
 }
 #wrapper{
 width: 600px;
 height: 600px;
+position: absolute;
+top: 50%;
+left: 50%;
 perspective: 900px;
-margin: 100px 450px;
+margin: -300px 0 0 -300px;
 border: 5px solid #458B74;
 border-radius: 10px;
-box-shadow: 0 1px 3px rgba(0,1,0,.5);
+box-shadow: 0 5px 5px rgba(0,1,0,.5);
 }
 #cube{
 position:relative;
@@ -39,59 +51,72 @@ box-shadow: 0 0 6px rgba(0,0,0,.5);
 transform-origin: 50% 50% -200px;
 transform-style: preserve-3d;
 transform: rotate3d(1,1,1,50deg);
-
 }
 #side1{
-background: url(103.jpg);
+background: url(images/103.jpg);
 background-size:cover;
 transform: translateZ(0px);
 }
+
 #side1:active{
-background: url(DSC08537.JPG);
+background: url(images/DSC08537.JPG);
 background-size:cover;
 }
 #side2{
-background: url(96.jpg);
+background: url(images/96.jpg);
 background-size:cover;
 transform: rotateY(90deg);
 }
 #side2:active{
-background: url(95.JPG);
+background: url(images/95.JPG);
 background-size:cover;
 }
 #side3{
-background: url(97.jpg);
+background: url(images/97.jpg);
 background-size:cover;
 transform: rotateY(-90deg);
 }
 #side3:active{
-background: url(98.JPG);
+background: url(images/98.JPG);
 background-size:cover;
 }
 #side4{
-background: url(99.jpg);
+background: url(images/DSC00513.jpg);
 background-size:cover;
 transform: rotateX(90deg);
 }
 #side4:active{
-background: url(DSC00513.JPG);
+background: url(images/99.JPG);
 background-size:cover;
 }
 #side5{
-background: url(DSC00602.jpg);
+background: url(images/DSC00602.jpg);
 background-size:cover;
 transform: rotateX(-90deg);
 }
 #side5:active{
-background: url(06022010097.JPG);
+background: url(images/06022010097.JPG);
 background-size:cover;
 }
 #side6{
-background: url(DSC00098.jpg);
+background: url(images/DSC00098.jpg);
 background-size:cover;
 transform: rotateY(180deg);
 }
 #side6:active{
-background: url(104.JPG);
+background: url(images/104.JPG);
 background-size:cover;
 }
+.side:hover::after {
+width: 400px;
+height: 100px;
+    content: attr(data-title); /* Выводим текст */
+    position: absolute; /* Абсолютное позиционирование */
+    left: 0; right: 0; top: 0; /* Положение подсказки */
+    z-index: 1; /* Отображаем подсказку поверх других элементов */
+    color: #fff; /* Цвет текста */
+    text-align: center; /* Выравнивание текста по центру */
+    font-family: Comic-Sans, sans-serif; /* Гарнитура шрифта */
+    font-size: 30px; /* Размер текста подсказки */
+    padding: 5px 10px; /* Поля */
+    
